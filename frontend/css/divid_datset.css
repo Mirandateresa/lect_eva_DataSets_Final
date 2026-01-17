@@ -1,0 +1,408 @@
+/* ===============================
+   VARIABLES GLOBALES ROSAS PASTEL
+   =============================== */
+:root {
+    --bg-color: #FFF0F7;              /* Rosa pastel muy claro */
+    --text-color: #5A3A4A;            /* Marrón rosado oscuro */
+    --accent-color: #FF6EB4;          /* Rosa pastel intenso */
+    --rosa-claro: #FFD6E7;            /* Rosa pastel claro */
+    --rosa-medio: #FF8EC7;            /* Rosa pastel medio */
+    --rosa-oscuro: #FF4BA3;           /* Rosa pastel oscuro */
+    --glass-bg: rgba(255, 214, 231, 0.3);    /* Rosa claro transparente */
+    --glass-border: rgba(255, 142, 199, 0.4); /* Rosa medio transparente */
+    --title-size: clamp(18px, 4.5vw + 1rem, 56px);
+    --subtitle-size: clamp(1rem, 2.5vw + 0.5rem, 2rem);
+    --border-gradient: linear-gradient(135deg, #FF8EC7, #FF6EB4); /* Gradiente rosa */
+    --fondo-suave: #FFF9FC;           /* Fondo rosado muy suave */
+}
+
+/* ===============================
+   ESTILOS GENERALES
+   =============================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #FFF0F7 0%, #FFE4F1 100%);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: radial-gradient(var(--rosa-claro) 2px, transparent 2px);
+    background-size: 40px 40px;
+}
+
+/* ===============================
+   HERO PRINCIPAL
+   =============================== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    background: white;
+    border-radius: 25px;
+    margin: 20px auto;
+    max-width: 1000px;
+    border: 3px solid var(--rosa-claro);
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.15);
+}
+
+.hero.glass {
+    font-size: var(--title-size);
+    color: #FF6EB4;
+    background: linear-gradient(135deg, #FF6EB4, #FF8EC7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    text-shadow: 0 4px 8px rgba(255, 110, 180, 0.2);
+    padding: 20px 0;
+}
+
+.hero.glass:hover {
+    text-shadow: 0 6px 12px rgba(255, 110, 180, 0.3);
+    transform: scale(1.02);
+}
+
+/* ===============================
+   ESTADO DEL DATASET / PLACEHOLDER
+   =============================== */
+.status-placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF8EC7;
+    margin-bottom: 2.5rem;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 20px;
+    border: 3px solid #FFD6E7;
+    box-shadow: 0 10px 25px rgba(255, 110, 180, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.status-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.2);
+    border-color: #FF8EC7;
+}
+
+/* ===============================
+   SPLIT INFO CARD
+   =============================== */
+.split-card {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    padding: 2rem;
+    background: white;
+    border: 3px solid var(--rosa-claro);
+    border-radius: 25px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 600;
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.split-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #FF6EB4, #FF8EC7, #FFB6D9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.split-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(255, 110, 180, 0.25);
+    border-color: #FF8EC7;
+}
+
+.split-card:hover::before {
+    opacity: 1;
+}
+
+.hidden { 
+    display: none; 
+}
+
+/* ===============================
+   GRÁFICAS / CARDS
+   =============================== */
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FFE4F1 0%, #FFF0F7 100%);
+    border-radius: 25px;
+    border: 3px solid var(--rosa-claro);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.plot-card {
+    width: 320px;
+    padding: 2rem;
+    background: white;
+    border: 3px solid var(--rosa-claro);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 30px rgba(255, 110, 180, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.plot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #FF6EB4, #FF8EC7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.plot-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(255, 110, 180, 0.25);
+    border-color: #FF8EC7;
+}
+
+.plot-card:hover::before {
+    opacity: 1;
+}
+
+.plot-card h4 {
+    font-size: 1.5rem;
+    color: #FF6EB4;
+    margin-bottom: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD6E7;
+    font-weight: 700;
+}
+
+.plot-card img {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 15px;
+    border: 2px solid #FFD6E7;
+    padding: 10px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.plot-card:hover img {
+    border-color: #FF8EC7;
+    transform: scale(1.02);
+}
+
+/* ===============================
+   BOTÓN DE REGRESO
+   =============================== */
+.menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 35px;
+    margin: 2.5rem auto;
+    font-weight: 700;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #FF8EC7 0%, #FF6EB4 100%);
+    border: 3px solid #FF6EB4;
+    box-shadow: 0 10px 25px rgba(255, 110, 180, 0.3);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: linear-gradient(135deg, #FF6EB4 0%, #FF4BA3 100%);
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.4);
+    transform: translateY(-5px);
+    border-color: #FF4BA3;
+}
+
+.menu-btn:active {
+    transform: translateY(-2px);
+}
+
+.menu-btn::before {
+    content: '←';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+        margin: 15px auto;
+        border-radius: 20px;
+    }
+    
+    .hero.glass {
+        font-size: 2rem;
+    }
+    
+    .plot-card { 
+        width: 90%; 
+        padding: 1.5rem; 
+        margin: 0 auto;
+    }
+    
+    .plot-card img { 
+        max-height: 350px; 
+    }
+    
+    .split-card { 
+        width: 95%; 
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        border-radius: 20px;
+    }
+    
+    .charts {
+        padding: 1.5rem;
+        gap: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .menu-btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+    
+    .status-placeholder {
+        font-size: 1.3rem;
+        padding: 15px 25px;
+        margin: 1.5rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero.glass {
+        font-size: 1.8rem;
+    }
+    
+    .plot-card {
+        width: 95%;
+        padding: 1.2rem;
+    }
+    
+    .plot-card img {
+        max-height: 300px;
+    }
+    
+    .split-card {
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+    
+    .menu-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 25px;
+    }
+    
+    .status-placeholder {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
+
+/* ===============================
+   ANIMACIONES
+   =============================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .split-card, .charts, .status-placeholder, .menu-btn {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.menu-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+/* ===============================
+   SCROLLBAR PERSONALIZADO
+   =============================== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFE4F1;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FFB6D9, #FF8EC7);
+    border-radius: 6px;
+    border: 3px solid #FFE4F1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FF8EC7, #FF6EB4);
+}
+
+/* ===============================
+   EFECTOS ESPECIALES
+   =============================== */
+::selection {
+    background-color: #FFB6D9;
+    color: #5A3A4A;
+}
+
+:focus-visible {
+    outline: 3px solid #FF8EC7;
+    outline-offset: 3px;
+    border-radius: 5px;
+}

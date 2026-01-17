@@ -1,0 +1,9 @@
+.
+.envDev
+__pycache__
+media
+backend/backend/__pycache__
+.vscode__pycache__/
+*.pyc
+.env
+node_modules/

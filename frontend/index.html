@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RegresionLogistica</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HERO PRINCIPAL -->
+    <section class="hero">
+      <h1 class="glass hero-title">Aplicación ML Usando Regresion Logistica</h1>
+      <p class="hero-subtitle">Carga tu dataset y empieza a explorar, dividir y analizar tus datos</p>
+    </section>
+
+    <!-- SECCIÓN DE SUBIDA DE DATASET -->
+    <section class="upload">
+      <label class="upload-box big-upload">
+        <input type="file" id="DataSetInput" accept=".csv, .txt, .json" />
+        <i class="fa-solid fa-cloud-arrow-up fa-3x" style="color: #a855f7;"></i>
+        <span class="upload-text">Selecciona tu Dataset</span>
+        <small style="color: rgba(255,255,255,0.5);">ARFF</small>
+      </label>
+
+      <!-- ESTADO DEL DATASET -->
+      <div class="dataset-status-container">
+        <!-- Estado dinámico -->
+        <p id="uploadStatus" class="status-placeholder">Ningún archivo cargado</p>
+
+        <!-- Indicador visual (solo se muestra si hay dataset) -->
+        <div id="datasetIndicator" class="status-badge hidden">
+          <i class="fa-solid fa-circle-check"></i> Dataset cargado y listo para procesar
+        </div>
+
+        <!-- Botón reset -->
+        <button id="resetDataset" class="btn-back hidden">Reset Dataset</button>
+      </div>
+    </section>
+
+    <!-- MENÚ PRINCIPAL -->
+    <section class="menu big-menu">
+      <a href="visualizacion.html" class="menu-btn" data-requiere-dataset>
+        <span>Visualización</span>
+        <i class="fa-solid fa-chart-pie"></i>
+      </a>
+      <a href="division_data.html" class="menu-btn" data-requiere-dataset>
+        <span>División</span>
+        <i class="fa-solid fa-code-fork"></i>
+      </a>
+      <a href="prep_Data.html" class="menu-btn" data-requiere-dataset>
+        <span>Preparación</span>
+        <i class="fa-solid fa-gears"></i>
+      </a>
+      <a href="pipelinesPersonalizados.html" class="menu-btn" data-requiere-dataset>
+        <span>Pipelines</span>
+        <i class="fa-solid fa-project-diagram"></i>
+      </a>
+      <a href="eval_model.html" class="menu-btn" data-requiere-dataset>
+        <span>Evaluación</span>
+        <i class="fa-solid fa-check-circle"></i>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="text-align: center; margin-top: 4rem; opacity: 0.6;">
+      © 2025 — | Todos los Derechos Reservados
+    </footer>
+
+    <script src="js/config.js" defer></script>
+    <script src="js/cargar_archivo.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+/* ===============================
+   VARIABLES GLOBALES ROSAS PASTEL
+   =============================== */
+:root {
+    --bg-color: #FFF0F7; /* Rosa pastel muy claro */
+    --text-color: #5A3A4A; /* Marrón rosado oscuro */
+    --accent-color: #FF6EB4; /* Rosa fuerte pastel */
+    --pink-accent: #FF8EC7;  /* Rosa medio pastel */
+    --glass-bg: rgba(255, 214, 231, 0.3); /* Rosa muy claro transparente */
+    --glass-border: rgba(255, 182, 217, 0.5); /* Rosa claro */
+    --title-size: clamp(20px, 5vw + 1rem, 56px);
+    --subtitle-size: clamp(0.9rem, 2vw + 0.5rem, 1.6rem);
+    --border-gradient: linear-gradient(135deg, #FF8EC7, #FF6EB4); /* Rosa pastel */
+}
+
+/* ===============================
+   ESTILOS GENERALES
+   =============================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===============================
+   HERO PRINCIPAL
+   =============================== */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem 1rem; 
+    background: linear-gradient(135deg, #FFE4F1 0%, #FFF0F7 100%);
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 2rem;
+}
+.hero-title {
+    font-size: var(--title-size);
+    color: #FF6EB4;
+    text-shadow: 0 2px 4px rgba(255, 110, 180, 0.2);
+    margin: 0;
+    padding: 10px 0;
+}
+
+.hero-title:hover {
+    text-shadow: 0 4px 8px rgba(255, 110, 180, 0.3);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.hero-subtitle {
+    font-size: var(--subtitle-size);
+    color: #FF8EC7;
+    text-shadow: 0 1px 2px rgba(255, 142, 199, 0.2);
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* ===============================
+   UPLOAD BOX
+   =============================== */
+.upload-box.big-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    background: white;
+    border: 2px solid #FFD6E7;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto 2rem auto;
+    max-width: 420px;
+    transition: all 0.3s ease;
+    gap: 1rem;
+    box-shadow: 0 8px 25px rgba(255, 110, 180, 0.15);
+}
+
+.upload-box.big-upload:hover {
+    background: #FFF9FC;
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.25);
+    border-color: #FF8EC7;
+    transform: translateY(-5px);
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.upload-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF6EB4;
+}
+
+.upload-box small {
+    color: #8A5D72;
+}
+
+/* ===============================
+   ESTADO DEL DATASET
+   =============================== */
+.dataset-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.status-placeholder, #uploadStatus {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FF8EC7;
+    text-align: center;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #FFD6E7;
+    border: 2px solid #FFB6D9;
+    border-radius: 15px;
+    padding: 0.6rem 1.2rem;
+    color: #FF6EB4;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.status-badge:hover {
+    background: #FFB6D9;
+    transform: scale(1.05);
+}
+
+.status-badge.hidden {
+    display: none;
+}
+
+/* ===============================
+   BOTÓN RESET DATASET (DESTACADO)
+   =============================== */
+#resetDataset {
+    background: linear-gradient(
+        135deg,
+        #FFB6D9,
+        #FF8EC7
+    );
+    border: 2px solid #FF6EB4;
+    color: white;
+    padding: 18px 44px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 20px rgba(255, 110, 180, 0.3);
+    transition: all 0.3s ease;
+}
+
+#resetDataset:hover {
+    background: linear-gradient(
+        135deg,
+        #FF8EC7,
+        #FF6EB4
+    );
+    box-shadow: 0 12px 30px rgba(255, 110, 180, 0.4);
+    transform: translateY(-3px);
+}
+
+#resetDataset:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(255, 110, 180, 0.3);
+}
+
+#resetDataset.hidden {
+    display: none;
+}
+
+/* ==============================================
+   MENÚ PRINCIPAL (BOTONES DE ACCIÓN AMPLIADOS)
+   ============================================== */
+.big-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px 50px; 
+    font-size: 1.4rem; 
+    border-radius: 20px;
+    background: white;
+    border: 2px solid #FFD6E7;
+    color: #FF6EB4;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 110, 180, 0.1);
+}
+
+.menu-btn i {
+    color: #FF8EC7;
+    font-size: 1.6rem;
+}
+
+.menu-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #FFF0F7;
+}
+
+.menu-btn:hover {
+    background: #FFF0F7;
+    box-shadow: 0 15px 35px rgba(255, 110, 180, 0.2);
+    transform: translateY(-5px);
+    border-color: #FF8EC7;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    color: #FF8EC7;
+    background: white;
+    border-top: 2px solid #FFD6E7;
+}
+
+.footer a {
+    color: #FF6EB4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    .hero-title { 
+        font-size: clamp(20px, 6vw, 36px); 
+    }
+    
+    .hero-subtitle { 
+        font-size: clamp(0.8rem, 4vw, 1.1rem); 
+    }
+    
+    .upload-box.big-upload { 
+        padding: 2rem 1.5rem; 
+        max-width: 95%; 
+        margin: 1rem auto;
+    }
+    
+    .upload-text { 
+        font-size: 1.3rem; 
+    }
+    
+    .menu-btn { 
+        padding: 18px 30px; 
+        font-size: 1.1rem; 
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+    
+    .menu-btn i { 
+        font-size: 1.3rem; 
+    }
+    
+    .big-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .menu-btn {
+        padding: 16px 25px;
+        font-size: 1rem;
+    }
+    
+    #resetDataset {
+        padding: 16px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===============================
+   ANIMACIONES SUAVES
+   =============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .upload-box.big-upload, .big-menu {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===============================
+   EFECTOS ADICIONALES
+   =============================== */
+::selection {
+    background-color: #FFB6D9;
+    color: #5A3A4A;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF0F7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFB6D9;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF8EC7;
+}
